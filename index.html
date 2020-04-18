@@ -14,10 +14,11 @@
 				var url = "cit5students.json";
 				var request = new XMLHttpRequest();
 				request.open("GET", url);
-				var data = JSON.parse(request.responseText);
+				var data = request.responseText;
 				
 				var table1 = document.getElementById("table");
-				var tableData = "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
+				var tableData = "<table class='table'>";
+				tableData += "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
 				tableData += "<tbody>";
 				
 				for (i = 0; i < data.length; i++) {
@@ -27,6 +28,7 @@
 				}
 				
 				tableData += "</tbody>";
+				tableData += "</table>";
 				table1.innerHTML = tableData;
 				
 			}
@@ -38,7 +40,7 @@
 		<p><input type="button" value="CIT Majors" onclick="getCITData()">
 		<input type="button" value="Business Majors"></p>
 		<p>We filter our dataset by major</p>
-		<div class="container" id="table">
+		<div class="handlebar" id="table">
 			<table class="table">
 				
 			</table>
