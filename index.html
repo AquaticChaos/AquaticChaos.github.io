@@ -39,7 +39,7 @@
 					if (request.status == 200) {
 						var templateText = document.getElementById('cit-student-template').innerHTML;
 						var compiledTemplateText = Handlebars.compile(templateText);
-						var compiledHtml = compiledTemplateText({rows : data});
+						var compiledHtml = compiledTemplateText({rows : majorMatch});
 						document.getElementById('table').innerHTML = compiledHtml;
 					} else {
 						document.querySelector('#table').innerHTML = "There was an error, or data not found.";
