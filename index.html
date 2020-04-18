@@ -24,7 +24,7 @@
 		</script>
 		
 		<script>
-			function getCITData() {
+			function getData(majorFilter) {
 				var url = "cit5students.json";
 				var request = new XMLHttpRequest();
 				request.open("GET", url);
@@ -32,7 +32,7 @@
 				request.onload = function() {
 					var data = JSON.parse(request.responseText);
 					var majorMatch = data.filter(function(student){
-						return  student.major = 'CIT';
+						return  student.major == majorFilter;
 					});
 					console.log(majorMatch);
 					if (request.status == 200) {
@@ -51,8 +51,8 @@
 
 	<body>
 		<h1>Select a Major</h1>
-		<p><input type="button" value="CIT Majors" onclick="getCITData">
-		<input type="button" value="Business Majors"></p>
+		<p><input type="button" value="CIT Majors" onclick="getData('CIT')">
+		<input type="button" value="Business Majors" onclick="getData('BUS')"></p>
 		<p>We filter our dataset by major</p>
 		<div class="container" id="table">
 			<table class="table">
