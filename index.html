@@ -14,22 +14,27 @@
 				var url = "cit5students.json";
 				var request = new XMLHttpRequest();
 				request.open("GET", url);
-				var data = request.responseText;
 				
-				var table1 = document.getElementById("table");
-				var tableData = "<table class='table'>";
-				tableData += "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
-				tableData += "<tbody>";
-				
-				for (i = 0; i < data.length; i++) {
-					if (data[i].major == "CIT") {
-						tableData += "<tr><td>" + data[i].name + "</td><td>" + data[i].major + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final +"</td></tr>";
+				request.onload = function() {
+					var data = JSON.parse(request.responseText);
+					
+					if (request.status == 200) {
+						var table1 = document.getElementById("table");
+						var tableData = "<table class='table'>";
+						tableData += "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
+						tableData += "<tbody>";
+						
+						for (i = 0; i < data.length; i++) {
+							if (data[i].major == "CIT") {
+								tableData += "<tr><td>" + data[i].name + "</td><td>" + data[i].major + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final +"</td></tr>";
+							}
+						}
+						
+						tableData += "</tbody>";
+						tableData += "</table>";
+						table1.innerHTML = tableData;
 					}
 				}
-				
-				tableData += "</tbody>";
-				tableData += "</table>";
-				table1.innerHTML = tableData;
 				
 			}
 		</script>
