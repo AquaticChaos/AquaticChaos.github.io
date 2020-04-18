@@ -7,9 +7,23 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+		
+		<script id="cit-student-template" type="text/x-handlebars-template">
+			<table>
+					<tr>
+						<th>Name</th><th>Major</th><th>Midterm</th><th>Final</th>
+					</tr>
+					{{#each rows}}
+						<tr>
+							<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+						</tr>
+					{{/each}}
+			</table>
+		</script>
+		
 		<script>
-
-			
 			function getCITData() {
 				var url = "cit5students.json";
 				var request = new XMLHttpRequest();
@@ -17,35 +31,30 @@
 				
 				request.onload = function() {
 					var data = JSON.parse(request.responseText);
-					
+					var majorMatch = data.filter(function(student){
+						return  student.major = 'CIT';
+					});
+					console.log(majorMatch);
 					if (request.status == 200) {
-						var table1 = document.querySelector('#table');
-						var tableData = "<table class='table'>";
-						tableData += "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
-						tableData += "<tbody>";
-						
-						for (i = 0; i < data.length; i++) {
-							if (data[i].major == "CIT") {
-								tableData += "<tr><td>" + data[i].name + "</td><td>" + data[i].major + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final +"</td></tr>";
-							}
-						}
-						
-						tableData += "</tbody>";
-						tableData += "</table>";
-						table1.innerHTML = tableData;
+						var templateText = document.getElementById('cit-student-template').innerHTML;
+						var compiledTemplateText = Handlebars.compile(templateText);
+						var compiledHtml = compiledTemplateText({rows : data});
+						document.getElementById('table').innerHTML = compiledHtml;
+					} else {
+						document.querySelector('#table').innerHTML = "There was an error, or data not found.";
 					}
 				}
-				
+				request.send(null);
 			}
 		</script>
 	</head>
 
 	<body>
 		<h1>Select a Major</h1>
-		<p><input type="button" value="CIT Majors" onclick="getCITData()">
+		<p><input type="button" value="CIT Majors" onclick="getCITData">
 		<input type="button" value="Business Majors"></p>
 		<p>We filter our dataset by major</p>
-		<div class="handlebar" id="table">
+		<div class="container" id="table">
 			<table class="table">
 				
 			</table>
