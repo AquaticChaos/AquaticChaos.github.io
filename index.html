@@ -1,13 +1,47 @@
-<!doctype html>
 <html>
-  <head>
-     <neta charset="UTF-8">
-       <title>test</title>
-  </head>
-  <body>
-  
-		<b1>Github Test Page</b1>
+	<head>
+		<title>Program 5 - CIT 140 (Javascript) - Jacob Palmer</title>
 		
-		<p>Hello Github!</p>
+		 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ 
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script>
+
+			
+			function getCITData() {
+				var url = "cit5students.json";
+				var request = new XMLHttpRequest();
+				request.open("GET", url);
+				var data = JSON.parse(request.responseText);
+				
+				var table1 = document.getElementById("table");
+				var tableData = "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
+				tableData += "<tbody>";
+				
+				for (i = 0; i < data.length; i++) {
+					if (data[i].major == "CIT") {
+						tableData += "<tr><td>" + data[i].name + "</td><td>" + data[i].major + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final +"</td></tr>";
+					}
+				}
+				
+				tableData += "</tbody>";
+				table1.innerHTML = tableData;
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Select a Major</h1>
+		<p><input type="button" value="CIT Majors" onclick="getCITData()">
+		<input type="button" value="Business Majors"></p>
+		<p>We filter our dataset by major</p>
+		<div class="container" id="table">
+			<table class="table">
+				
+			</table>
+		</div>
 	</body>
 </html>
