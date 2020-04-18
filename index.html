@@ -19,7 +19,7 @@
 					var data = JSON.parse(request.responseText);
 					
 					if (request.status == 200) {
-						var table1 = document.getElementById("table");
+						var table1 = document.querySelector('#table');
 						var tableData = "<table class='table'>";
 						tableData += "<thead><tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr></thead>";
 						tableData += "<tbody>";
