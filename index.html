@@ -1,64 +1,59 @@
 <html>
 	<head>
-		<title>Program 5 - CIT 140 (Javascript) - Jacob Palmer</title>
+		<title>Program 6 - CIT 140 (Javascript) - Jacob Palmer</title>
 		
-		 <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
- 
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
- 
-		<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-		
-		<script id="cit-student-template" type="text/x-handlebars-template">
-			<table>
-					<tr>
-						<th>Name</th><th>Major</th><th>Midterm</th><th>Final</th>
-					</tr>
-					{{#each rows}}
-						<tr>
-							<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
-						</tr>
-					{{/each}}
-			</table>
-		</script>
-		
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 		<script>
-			function getData(majorFilter) {
-				var majorFilter;
-				var url = "cit5students.json";
-				var request = new XMLHttpRequest();
-				request.open("GET", url);
-				
-				request.onload = function() {
-					var data = JSON.parse(request.responseText);
-					var majorMatch = data.filter(function(student){
-						return  student.major == majorFilter;
-					});
-					console.log(majorMatch);
-					if (request.status == 200) {
-						var templateText = document.getElementById('cit-student-template').innerHTML;
-						var compiledTemplateText = Handlebars.compile(templateText);
-						var compiledHtml = compiledTemplateText({rows : majorMatch});
-						document.getElementById('table').innerHTML = compiledHtml;
-					} else {
-						document.querySelector('#table').innerHTML = "There was an error, or data not found.";
-					}
-				}
-				request.send(null);
-			}
+			var app = angular.module('advApp', []);
+
+			app.controller('advCtrl', function($scope, $http) {
+				$http.get("students.json")          // get data from students.json
+				.then(function (response) {
+					$scope.students = response.data;  
+				});	   
+			});
 		</script>
 	</head>
 
-	<body>
-		<h1>Select a Major</h1>
-		<p><input type="button" value="CIT Majors" onclick="getData('CIT')">
-		<input type="button" value="Business Majors" onclick="getData('BUS')"></p>
-		<p>We filter our dataset by major</p>
-		<div class="container" id="table">
-			<table class="table">
-				
-			</table>
+	<body ng-app = "advApp">
+		<div class="container">
+		<nav class="navbar navbar-inverse">
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Our Website</a>
+			</div>
+			<div>
+			   <ul class="nav navbar-nav">
+				   <li class="active"><a href="index.html">All Advisees</a></li>
+				   <li><a href="gpa.html">Grade Point Averages</a></li>
+			   </ul>
+			</div>
+		</nav>
+		
+		<div ng-controller = "advCtrl">
+			<h2>Advisees</h2>
+			<p><input type='text' ng-model='search_text' > Enter Search text</p>
+			  <table class="table table-bordered table-striped">
+				  <tr>
+					  <th>sid</th>
+					  <th>last name</th>
+					  <th>first name</th>
+					  <th>credit hrs</th>
+					  <th>gpa points</th>
+					  <th>major</th>
+				  </tr>
+				  <tr ng-repeat = "student in students | filter:search_text ">
+					  <td>{{car.sid}}</td>
+					  <td>{{car.last_name}}</td>
+					  <td>{{car.first_name}}</td>
+					  <td>{{car.credit_hrs}}</td>
+					  <td>{{car.gpa_points}}</td>
+					  <td>{{car.major}}</td>
+				  </tr>
+			 </table>
 		</div>
 	</body>
 </html>
