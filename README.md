@@ -22,7 +22,7 @@ mysql,anaconda,visualstudio,gamemakerstudio,unity
 
 [Furniture Form Application](https://github.com/AquaticChaos/FurnitureFormApplication#) Created in C#, this GUI-based application allows the user to input one of two types of furniture as well as their specs, then import or export the list of all furniture.
 
-Placeholder C# 2
+[Loan Calculator Application](https://github.com/AquaticChaos/LoanCalculatorApplication) Created in C#, this GUI-based application allows the user the input their loan information to calculate their interest.
 
 [IT Strategic Assessment Report]() The first draft of a report for a local game store, going over the IT-specific blueprints for future decision-making efforts made by the business.
 
