@@ -20,7 +20,9 @@ mysql,anaconda,visualstudio,gamemakerstudio,unity
 
 [Linear Regression Model:](https://github.com/AquaticChaos/LinearRegression) Created in Python, this program takes a CSV collection of automobiles and predicts the miles per gallon using two methods: First based on horsepower, and second based on the manufacturing year.
 
-[Placeholder CSharp]()
+[Furniture Form Application](https://github.com/AquaticChaos/FurnitureFormApplication#) Created in C#, this GUI-based application allows the user to input one of two types of furniture as well as their specs, then import or export the list of all furniture.
+
+Placeholder C# 2
 
 [IT Strategic Assessment Report]() The first draft of a report for a local game store, going over the IT-specific blueprints for future decision-making efforts made by the business.
 
