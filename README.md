@@ -18,13 +18,13 @@ mysql,anaconda,visualstudio,gamemakerstudio,unity
 
 ## Current University Projects
 
-[Placeholder Prog3:] () Created in Python, this program takes a CSV collection of automobiles and predicts the miles per gallon using two methods: First based on horsepower, and second based on the manufacturing year.
+[Linear Regression Model:](https://github.com/AquaticChaos/LinearRegression) Created in Python, this program takes a CSV collection of automobiles and predicts the miles per gallon using two methods: First based on horsepower, and second based on the manufacturing year.
 
-[Placeholder CSharp] ()
+[Placeholder CSharp]()
 
-[IT Strategic Assessment Report] () The first draft of a report for a local game store, going over the IT-specific blueprints for future decision-making efforts made by the business.
+[IT Strategic Assessment Report]() The first draft of a report for a local game store, going over the IT-specific blueprints for future decision-making efforts made by the business.
 
-[Project Management Plan] () The second draft for a PMP involving a small business dedicated to teaching children about making music and other vocal arts.
+[Project Management Plan]() The second draft for a PMP involving a small business dedicated to teaching children about making music and other vocal arts.
 
 
 ## GitHub Stats
