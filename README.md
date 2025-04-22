@@ -1,6 +1,6 @@
-## Welcome! I'm Jacob Palmer, alias AquaticChaos
+## Welcome! I'm Jacob Palmer, also known as AquaticChaos
 
-I'm a passionate Computer Information Systems student who loves creating innovative tech solutions through the use of databases and programming. Creating these helps me grow as a developer, furthering my skills in both the workforce and with personal projects.
+I'm a passionate Computer Information Systems student who loves creating innovative tech solutions through the use of databases and programming. Creating these helps me grow as a developer, furthering my skills in both the workforce and with personal video game projects.
 
 While none of my personal projects are finished yet, I will update this portfolio when they are!
 
