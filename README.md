@@ -30,11 +30,7 @@ mysql,anaconda,visualstudio,gamemakerstudio,unity
 
 
 ## GitHub Stats
-
-🌟 Public Repositories: 2
-👥 Followers: 0
-👤 Following: 0
-
+ 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AquaticChaos&show_icons=true&theme=radical)
 
 ## Best Ways of Reaching Me
