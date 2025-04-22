@@ -14,7 +14,7 @@ While none of my personal projects are finished yet, I will update this portfoli
 
 ## Skills & Technologies
 
-mysql,anaconda,visualstudio,gamemakerstudio,unity
+[![My Skills](https://skillicons.dev/icons?i=mysql,anaconda,visualstudio,gamemakerstudio,unity&perline=8)](https://skillicons.dev)
 
 ## University Projects
 
