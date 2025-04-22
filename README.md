@@ -16,9 +16,9 @@ While none of my personal projects are finished yet, I will update this portfoli
 
 mysql,anaconda,visualstudio,gamemakerstudio,unity
 
-## Current University Projects
+## University Projects
 
-[Placeholder SQL]()
+[Placeholder SQL](https://github.com/AquaticChaos/SQL)
 
 [Linear Regression Model:](https://github.com/AquaticChaos/LinearRegression) Created in Python, this program takes a CSV collection of automobiles and predicts the miles per gallon using two methods: First based on horsepower, and second based on the manufacturing year.
 
