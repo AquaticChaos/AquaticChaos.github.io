@@ -31,7 +31,7 @@ mysql,anaconda,visualstudio,gamemakerstudio,unity
 
 ## GitHub Stats
  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AquaticChaos&show_icons=true&theme=radical)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AquaticChaos&show_icons=true&theme=dark)
 
 ## Best Ways of Reaching Me
 
