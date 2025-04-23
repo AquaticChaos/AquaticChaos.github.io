@@ -18,7 +18,7 @@ While none of my personal projects are finished yet, I will update this portfoli
 
 ## University Projects
 
-[Placeholder SQL](https://github.com/AquaticChaos/SQL)
+[SQL ERD & Business Questions:](https://github.com/AquaticChaos/SQL) Created through Microsoft Visio / Access and SQL respectively, two seperate databases were created to meet the standards of the businesses involved in each. One for a college organizing their faculty and courses, and one for a fictitious property business requesting several queries.
 
 [Linear Regression Model:](https://github.com/AquaticChaos/LinearRegression) Created in Python, this program takes a CSV collection of automobiles and predicts the miles per gallon using two methods: First based on horsepower, and second based on the manufacturing year.
 
